@@ -1,0 +1,70 @@
+{% load staticfiles %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'scgarden/accessible_GardensStyle.css' %}" />
+    <link rel="shortcut icon" href="{% static "mainpage/images/icon1.jpg" %}" />
+    <script type="text/javascript" src="{% static 'scgarden/js/jquery-1.8.3.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'scgarden/js/myscript.js' %}" ></script>
+
+<div id="all">
+        <div id="dtop"></div>
+        <img id="header" src="{% static 'scgarden/images/header.jpg'%}">
+        {% if pageModule_text_list %}
+        <ul id="jsddm">
+        {% for module in pageModule_text_list %}
+        <li><a href="http://{{ request.get_host }}/{{ module.url_text}}">{{ module.pageModule_text }}</a>
+        	<ul>
+        		{% for singleModule in module.singlemodule_set.all %}
+        		<li><a href="http://{{ request.get_host }}/{{singleModule.singleModule_url_text}}">{{ singleModule.singleModule_text }}</a></li>
+        		{% endfor %}
+        	</ul>
+        </li>
+        {% endfor %}
+        </ul>
+    <div id="leftcontent">
+    <h1 id="h1caption">Accessible Garden Resources Links</h1>
+        <div id="accessiblecontent">
+        <ol id="accessible_ol">
+            <h3 class="access_h3">Virtual Garden Tours</h3>
+            <li><a href="http://www.chicagobotanic.org/explore/enabling.php">Buehler Enabling Garden at Chicago Botanic Garden</a></li>
+            <li><a href="http://beehive.thisisstaffordshire.co.uk/default.asp?WCI=SiteHome&amp;ID=9908">Sensory Garden for Multiple Sclerosis</a></li>
+            <li><a href="http://www.kidsgardening.com/Dig/digdetail.taf?Type=Art&amp;ID=2080">Growing Kids in Accessible Gardens</a></li>
+            <li><a href="http://www.bbg.org/discover/gardens/fragrance_garden/">Brooklyn Botanic Garden Fragrance Garden for the Blind</a></li>
+            <li><a href="http://www.childrensplaygarden.org/about-us.php">Seattle Children’s Playgarden for Children with Physical and Mental Disabilities</a></li>
+            <li><a href="http://www.nccu-vitp.net/FranckGarden/">Franck Fragrance Garden for the Blind in Raleigh, NC</a></li>
+            <li><a href="http://www.christopherreeve.org/site/c.mtKZKgMWKwG/b.5300837/k.7D2E/">Christopher and Dana Reeve Foundation-Gardening from a Wheelchair</a></li>
+
+            <h3 class="access_h3">Accessible Garden Tools and Equipment</h3>
+            <li><a href="http://www.disabled-world.com">Disabled World</a></li>
+            <li><a href="http://www.gardeningwithease.com">Gardening With Ease</a></li>
+            <li><a href="http://www.gardeners.com">Gardener’s Supply Company</a></li>
+            <li><a href="http://www.hound-dog.com">Hound Dog</a></li>
+            <li><a href="http://www3.fiskars.com">Fiskars</a></li>
+
+            <h3 class="access_h3">Books</h3>
+            <li><span class="spanstyle">Adil, Janeen R. Accessible Gardening for People with Physical Disabilities: A Guide to Methods</span></li>
+            <li><span class="spanstyle">Tools and Plants</span></li>
+            <li><span class="spanstyle">Dennis, Lynn. Gardening for Life</span></li>
+            <li><span class="spanstyle">Eddison, Sydney. Gardening for a Lifetime: How to Garden Wiser as You Grow Older</span></li>
+            <li><span class="spanstyle">Moore, Bibby. Growing With Gardening</span></li>
+            <li><span class="spanstyle">Rothert, Gene. The Enabling Garden: Creating Barrier-Free Gardens</span></li>
+            <li><span class="spanstyle">Schweller, Frank J. Container Gardening for the Handicapped</span></li>
+            <li><span class="spanstyle">Stoneham, Jane and Peter Thoday. Landscape Design for Elderly and Disabled People</span></li>
+            <li><span class="spanstyle">Woy, Joanna. Accessible Gardening: Tips and Techniques for Seniors and Disabled</span></li>
+            <li><span class="spanstyle">Yeomans, Kathleen. The Able Gardener: Overcoming Barriers of Age and Physical Limitations</span></li>
+        </div>
+    </div>
+{% else %}
+    <p>Loading Error.</p>
+{% endif %}
+    <div id="dimg"> <img src="{% static 'mainpage/images/map.jpg'%}" width="200px" height="150px"></div> 
+    <div id="dcontact"><h3>&nbsp;&nbsp;Contact Information</h3>
+        <ul id="ulcontact">
+            <li>Name: Dr. Arlene Marturano</li>
+            <li>Email: scgardenlearning@gmail.com </li>
+        </ul>
+    </div>
+
+    <div id="dfacebook"><h3>&nbsp;&nbsp;Find us on Facebook</h3>
+        <a href="https://www.facebook.com/pages/South-Carolina-Garden-Based-Learning-Network/190464384322916"><img id="dfaceimage" src="{% static 'mainpage/images/facebook.png'%}" id="imgfacebook"></a>
+    </div>
+</div>

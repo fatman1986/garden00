@@ -1,0 +1,143 @@
+{% load staticfiles %}
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'scgarden/styles.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'books/bookstyle.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'books/mystyle.css' %}" />
+    <link rel="shortcut icon" href="{% static "mainpage/images/icon1.jpg" %}" />
+    <script type="text/javascript" src="{% static 'scgarden/js/jquery-1.8.3.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'books/js/bookjs.js' %}" ></script>
+    <script type="text/javascript" src="{% static 'scgarden/js/imagescript.js' %}"></script>
+    <script type="text/javascript" src="{% static 'scgarden/js/jssor.js' %}"></script>
+    <script type="text/javascript" src="{% static 'scgarden/js/myscript.js' %}" ></script>
+
+<div id="all">
+  <div id="dtop"></div>
+  <img id="header" src="{% static 'mainpage/images/header.jpg'%}">
+{% if pageModule_text_list %}
+    <ul id="jsddm">
+    {% for module in pageModule_text_list %}
+        
+        <li><a href="../{{ module.url_text}}">{{ module.pageModule_text }}</a>
+        	<ul>
+        		{% for singleModule in module.singlemodule_set.all %}
+        		<li><a href="../{{singleModule.singleModule_url_text}}">{{ singleModule.singleModule_text }}</a></li>
+        		{% endfor %}
+        	</ul>
+        </li>
+    {% endfor %}
+    </ul>
+<div id="leftcontent">
+    <h1 id="h1caption">Nutrition Gardening Books</h1>
+  
+    <div id="w" class="clearfix">
+
+      <ul id="sidemenu">
+      </li>
+        <img src="{% static 'books/images/bg.jpg'%}" width="200px" height="180px" >
+      </li>
+      <li>
+        <a href="#home-content" class="open"><strong>Food-Related </strong></a>
+      </li>
+
+      <li>
+        <a href="#about-content"><strong>Kids Cookbooks</strong></a>
+      </li>
+      
+      <li>
+        <a href="#ideas-content"><strong>Parents&Teachers</strong></a>
+      </li>
+       <li>
+        <img src="{% static 'books/images/book1.jpg'%}" width="200px" height="180px" >
+      </li>
+      <li>
+        <img src="{% static 'books/images/book4.jpg'%}" width="200px" height="180px" >
+      </li>
+      <li>
+        <img src="{% static 'books/images/book3.jpg'%}" width="200px" height="180px" >
+      </li>
+    </ul>
+    
+    <div id="content">
+        <div id="home-content" class="contentblock">
+          <h1 class="h1content">Children’s Food-related Gardening Books</h1>
+          <ul class="book1">
+          <li><span class="bookspan">And the Good Brown Earth by Kathy Henderson</span></li>
+          <li><span class="bookspan">Blueberries for Sal by Robert McClosky</span></li>
+          <li><span class="bookspan">Blue Potatoes, Orange Tomatoes by Rosalind Creasy</span></li>
+          <li><span class="bookspan">Bring Me Some Apples and I’ll Make You a Pie by Robbin Gourley</span></li>
+          <li><span class="bookspan">Cool as a Cucumber, Hot as a Pepper: Fruit Vegetables by Meredith Sayles Hughes</span></li>
+          <li><span class="bookspan">Eating the Alphabet: Fruits and Vegetables from A-Z by Lois Ehlert</span></li>
+          <li><span class="bookspan">Everyday Garden by Cynthia Rylant</span></li>
+          <li><span class="bookspan">From Seed to Plant by Gail Gibbons</span></li>
+          <li><span class="bookspan">Grandpa’s Garden Lunch by Judith Caseley</span></li>
+          <li><span class="bookspan">Grow Your Own Pizza by Constance Hardesty</span></li>
+          <li><span class="bookspan">Growing Vegetable Soup by Lois Ehlert</span></li>
+          <li><span class="bookspan">How Groundhog’s Garden Grew by Lynn Cherry</span></li>
+          <li><span class="bookspan">Jack and the Wonder Beans by James Still</span></li>
+          <li><span class="bookspan">Let’s Grow a Garden by Gyo Fujikawa</span></li>
+          <li><span class="bookspan">Lily’s Garden by Deborah Kogan Ray</span></li>
+          <li><span class="bookspan">My Backyard Garden by Carol Lerner</span></li>
+          <li><span class="bookspan">Oliver’s Vegetables by Vivian French</span></li>
+          <li><span class="bookspan">Peter Rabbit’s Gardening Book by Sarah Garland</span></il>
+          <li><span class="bookspan">Strawberry Girl by Lois Lenski</span></li>
+          <li><span class="bookspan">The Carrot Seed by Ruth Kraus</span></li>
+          <li><span class="bookspan">The Edible Pyramid by Loreen Leedy</span></li>
+          <li><span class="bookspan">The Tale of Peter Rabbit by Beatrix Potter</span></li>
+          <li><span class="bookspan">The Ugly Vegetables by Grace Lin</span></li>
+          <li><span class="bookspan">The Victory Garden Kid’s Book by Marjorie Waters</span></li>
+          <li><span class="bookspan">The Victory Garden Vegetable Alphabet Book by Jerry Pallota and Bob Thomson</span></li>
+          <li><span class="bookspan">This Year’s Garden by Cynthia Rylant</span></li>
+    </div><!-- @end #home-content -->
+        
+        
+        <div id="about-content" class="contentblock hidden">
+          <h1 class="h1content">Kids Cookbooks</h1>
+          <ul class="book1">
+          <li><span class="bookspan">Acorn Pancakes, Dandelion Salad, and Other Wild Dishes by Jean Craighead George</span></li>
+          <li><span class="bookspan">First Garden by Robbin Gourley</span></li>
+          <li><span class="bookspan">Dinner from Dirt: 10 Meals Kids Can Grow and Eat by Emily Scott and Catherine Duffy</span></li>
+          <li><span class="bookspan">Thyme for Kids by Leana and Evangelina Potts</span></li>
+          <li><span class="bookspan">Fanny at Chez Panisse by Alice Waters</span></li>
+          </ul>
+        </div><!-- @end #about-content -->
+        
+        <div id="ideas-content" class="contentblock hidden">
+          <h1 class="h1content">Books for Parents and Teachers</h1>
+          <ul class="book1">
+          <li><span class="bookspan">Cooking from the Garden by Rosalind Creasy</span></li>
+          <li><span class="bookspan">Edible Landscaping by Rosalind Creasy</span></li>
+          <li><span class="bookspan">From Seed to Salad by Hannah Lyons Johnson</span></li>
+          <li><span class="bookspan">From Seed to Skillet by Jimmy Williams and Susan Heeger</span></li>
+          <li><span class="bookspan">From the Earth to the Table by John Ash</span></li>
+          <li><span class="bookspan">Hollyhock Days by Sharon Lovejoy</span></li>
+          <li><span class="bookspan">Kitchen Gardens by Mary Mason Campbell</span></li>
+          <li><span class="bookspan">Roots, Shoots, Buckets and Boots by Sharon Lovejoy</span></li>
+          <li><span class="bookspan">Southern My Way by Gena Knox</span></li>
+          <li><span class="bookspan">Success with Small Food Gardens by Louise Riotte</span></li>
+          <li><span class="bookspan">Sunflower Houses: Inspiration from the Garden by Sharon Lovejoy</span></li>
+          <li><span class="bookspan">The Children’s Kitchen Garden: A Book of Gardening, Cooking and Learning by Georgeanne and Ethel Brennan</span></li>
+          <li><span class="bookspan">The Edible Front Yard by Ivette Soler</span></li>
+          <li><span class="bookspan">The Family Kitchen Garden by Karen Liebreich, Jutta Wagner and Annette Wendland</span></li>
+          <li><span class="bookspan">The Organic Manifesto by Maria Rodale</span></li>
+          </ul>
+       </div><!-- @end #ideas-content -->
+    </div><!-- @end #content -->
+</div>
+</div> <!-- @end leftcontent -->
+
+ <div id="dimg"> <img src="{% static 'mainpage/images/map.jpg'%}" width="200px" height="150px"></div> 
+    <div id="dcontact"><h3>&nbsp;&nbsp;Contact Information</h3>
+        <ul id="ulcontact">
+            <li>Name: Dr. Arlene Marturano</li>
+            <li>Email: scgardenlearning@gmail.com </li>
+        </ul>
+    </div>
+
+    <div id="dfacebook"><h3>&nbsp;&nbsp;Find us on Facebook</h3>
+        <a href="https://www.facebook.com/pages/South-Carolina-Garden-Based-Learning-Network/190464384322916"><img id="dfaceimage" src="{% static 'mainpage/images/facebook.png'%}" id="imgfacebook"></a>
+    </div>
+{% else %}
+    <p>Loading Error.</p>
+{% endif %}
+
+</div><!-- @end all -->

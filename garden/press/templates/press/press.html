@@ -1,0 +1,59 @@
+{% load staticfiles %}
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'press/headerStyle.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'press/mystyle.css' %}" />
+    <link rel="shortcut icon" href="{% static "mainpage/images/icon1.jpg" %}" />
+    <script type="text/javascript" src="{% static 'scgarden/js/jquery-1.8.3.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'scgarden/js/imagescript.js' %}"></script>
+    <script type="text/javascript" src="{% static 'scgarden/js/jssor.js' %}"></script>
+    <script type="text/javascript" src="{% static 'scgarden/js/myscript.js' %}" ></script>
+<div id="all">
+    <div id="dtop"></div>
+    <img id="header" src="{% static 'mainpage/images/header.jpg'%}">
+{% if pageModule_text_list %}
+    <ul id="jsddm">
+    {% for module in pageModule_text_list %}
+        
+        <li><a href="../{{ module.url_text}}">{{ module.pageModule_text }}</a>
+        	<ul>
+        		{% for singleModule in module.singlemodule_set.all %}
+        		<li><a href="../{{singleModule.singleModule_url_text}}">{{ singleModule.singleModule_text }}</a></li>
+        		{% endfor %}
+        	</ul>
+        </li>
+    {% endfor %}
+    </ul>
+<div id="leftcontent">
+  <h1 id="h1caption">In The Press</h1>
+  <div id="press_content">
+   <ol id="press_ol">
+    <li><a href="http://hece.edublogs.org/2011/04/09/grow-and-learn-the-lessons-learned-in-a-garden-go-beyond-good-nutrition/">“Grow-and-Learn” in April 2011 Palmetto Parent</a></li>
+    <li><a href="http://4h.ucanr.edu/files/1229.pdf">Research contributor to “Revisiting Garden-based Learning in Basic Education” for paper presented to &nbsp;&nbsp;FAO and International Institute for Educational Planning of UNESCO</a></li>
+    <li><a href="http://www.californiakindergartenassociation.org/publications/kindergarten-education-theory-research-and-practice-journal-articles-volume-4-no-1-spring-1999/">Abstract of “The Educational Roots of Garden-Based Learning and Contemporary Gateways to &nbsp;&nbsp;Gardening with Children” for the California Kindergarten Association</a></li>
+    <li><a href="http://www.kidsgardening.com/themes/nutrition5.asp">“Thematic Nutrition Gardens” featured in Kidsgardening Newsletter</a></li>
+    <li><a href="http://www.kidsgardening.com/Dig/DigDetail.taf?ID=1693&amp;Type=Art">“Student-Made Bird Garden” featured in Kidsgardening Newsletter</a></li>
+    <li><a href="http://www.eric.ed.gov/ERICWebPortal/search/detailmini.jsp?_nfpb=true&amp;_&amp;ERICExtSearch_SearchValue_0=EJ676705&amp;ERICExtSearch_SearchType_0=no&amp;accno=EJ676705">Abstract of “Horticulture and Human Culture” in Science and Children</a></li>
+    <li><a href="http://www.eric.ed.gov/ERICWebPortal/search/detailmini.jsp?_nfpb=true&amp;_&amp;ERICExtSearch_SearchValue_0=EJ610427&amp;ERICExtSearch_SearchType_0=no&amp;accno=EJ610427">Abstract of “Garden Variety Curriculum” in Science Scope</a></li>
+    <li><a href="http://www.eric.ed.gov:80/ERICWebPortal/search/detailmini.jsp?_nfpb=true&amp;_&amp;ERICExtSearch_SearchValue_0=EJ722406&amp;ERICExtSearch_SearchType_0=no&amp;accno=EJ722406">Abstract of “Making Connections Fun” in Science Scope</a></li>
+    <li><a href="http://www.jstor.org/pss/20195153">Excerpt of “B.I.R.D.” from The Reading Teacher</a></li>
+    <li><a href="http://www.jstor.org/pss/20199083">Excerpt from “An Environmental Reading Program” in The Reading Teacher</a></li>
+    <li><a href="http://www.eric.ed.gov:80/ERICWebPortal/search/detailmini.jsp?_nfpb=true&amp;_&amp;ERICExtSearch_SearchValue_0=EJ325659&amp;ERICExtSearch_SearchType_0=no&amp;accno=EJ325659">Excerpt of “Reading Instruction in the Out-of-Doors” in Journal of Outdoor Education</a></li>
+    <li><a href="http://www.eric.ed.gov:80/ERICWebPortal/search/detailmini.jsp?_nfpb=true&amp;_&amp;ERICExtSearch_SearchValue_0=ED208337&amp;ERICExtSearch_SearchType_0=no&amp;accno=ED208337">Abstract of “Reading the Environment: An Approach to Language and Concept Development”</a><br>
+    </ol>
+  </div>
+</div>
+<div id="dimg"> <img src="{% static 'mainpage/images/map.jpg'%}" width="200px" height="150px"></div> 
+    <div id="dcontact"><h3>&nbsp;&nbsp;Contact Information</h3>
+        <ul id="ulcontact">
+            <li>Name: Dr. Arlene Marturano</li>
+            <li>Email: scgardenlearning@gmail.com </li>
+        </ul>
+    </div>
+
+    <div id="dfacebook"><h3>&nbsp;&nbsp;Find us on Facebook</h3>
+        <a href="https://www.facebook.com/pages/South-Carolina-Garden-Based-Learning-Network/190464384322916"><img id="dfaceimage" src="{% static 'mainpage/images/facebook.png'%}" id="imgfacebook"></a>
+    </div>
+{% else %}
+    <p>Loading Error.</p>
+{% endif %}
+</div>

@@ -1,0 +1,89 @@
+{% load staticfiles %}
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'playfulPlants/mystyle.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'playfulPlants/smart_tab_vertical.css' %}" />
+    <link rel="shortcut icon" href="{% static "mainpage/images/icon1.jpg" %}" />
+    <script type="text/javascript" src="{% static 'scgarden/js/jquery-1.8.3.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'scgarden/js/jssor.js' %}"></script>
+    <script type="text/javascript" src="{% static 'scgarden/js/myscript.js' %}" ></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script type="text/javascript" src="{% static 'playfulPlants/js/jquery.smartTab.js' %}" ></script>
+
+    
+    <script>
+         $(document).ready(function(){
+      // Smart Tab
+      $('#tabs').smartTab({autoProgress: true,transitionEffect:'none'});
+    });
+      </script>
+<div id="all">
+    <div id="dtop"></div>
+    <img id="header" src="{% static 'mainpage/images/header.jpg'%}">
+{% if pageModule_text_list %}
+    <ul id="jsddm">
+    {% for module in pageModule_text_list %}
+        
+        <li><a href="../{{ module.url_text}}">{{ module.pageModule_text }}</a>
+        	<ul>
+        		{% for singleModule in module.singlemodule_set.all %}
+        		<li><a href="../{{singleModule.singleModule_url_text}}">{{ singleModule.singleModule_text }}</a></li>
+        		{% endfor %}
+        	</ul>
+        </li>
+    {% endfor %}
+    </ul>
+  <div id="leftcontent">
+    <h1 id="h1caption">Playful Plants for Children’s Gardens</h1>
+
+    <!--
+     <div id="accordion-1">
+      {% for eachCategory in category%}
+      <h3 class="title">{{ eachCategory.category_text }}</h3>
+      <div>
+      {% for eachImage in eachCategory.image_set.all %}
+        <div class="eachImage">
+          <img class="specialOne" src="{{eachImage.images.large.url}}" alt="{{eachImage.image_descript}}" width="150px" height="150px">
+          <h3> {{eachImage.image_descript}} </h3>
+        </div>
+      {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+    -->
+      <div id="tabs" class="stContainer">
+        <ul>
+          {% for eachCategory in category%}
+          <li><a href="#tabs-{{ eachCategory.id }}">      
+                <h2>{{ eachCategory.category_text }}</h2>
+            </a></li>
+          {% endfor %}
+        </ul>
+        {% for eachCategory in category%}
+        <div id="tabs-{{ eachCategory.id }}">
+            <!--<h2>{{ eachCategory.category_text }}</h2>--> 
+            {% for eachImage in eachCategory.image_set.all %}
+            <div id="eachImage">
+              <img class="specialOne" src="{{eachImage.images.large.url}}" alt="{{eachImage.image_descript}}" width="120px" height="120px">
+              <h3> {{eachImage.image_descript}} </h3>
+            </div>
+            {% endfor %}          
+        </div>
+        {% endfor %}
+      </div> <!--end for tab-->
+</div><!--end for leftcontent-->
+    <div id="dimg"> <img src="{% static 'mainpage/images/map.jpg'%}" width="200px" height="150px"></div> 
+    <div id="dcontact"><h3>&nbsp;&nbsp;Contact Information</h3>
+        <ul id="ulcontact">
+            <li>Name: Dr. Arlene Marturano</li>
+            <li>Email: scgardenlearning@gmail.com </li>
+        </ul>
+    </div>
+
+    <div id="dfacebook"><h3>&nbsp;&nbsp;Find us on Facebook</h3>
+        <a href="https://www.facebook.com/pages/South-Carolina-Garden-Based-Learning-Network/190464384322916"><img id="dfaceimage" src="{% static 'mainpage/images/facebook.png'%}" id="imgfacebook"></a>
+    </div>
+{% else %}
+    <p>Loading Error.</p>
+{% endif %}
+</div><!--end for all-->

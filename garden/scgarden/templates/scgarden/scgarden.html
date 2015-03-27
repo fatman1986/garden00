@@ -1,0 +1,78 @@
+{% load staticfiles %}
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'scgarden/styles.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'scgarden/mystyle.css' %}" />
+    <link rel="shortcut icon" href="{% static "mainpage/images/icon1.jpg" %}" />
+    <script type="text/javascript" src="{% static 'scgarden/js/jquery-1.8.3.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'scgarden/js/imagescript.js' %}"></script>
+    <script type="text/javascript" src="{% static 'scgarden/js/jssor.js' %}"></script>
+    <script type="text/javascript" src="{% static 'scgarden/js/myscript.js' %}" ></script>
+
+<div id="all">
+        <div id="dtop"></div>
+        <img id="header" src="{% static 'scgarden/images/header.jpg'%}">
+        {% if pageModule_text_list %}
+        <ul id="jsddm">
+        {% for module in pageModule_text_list %}
+        <li><a href="../{{ module.url_text}}">{{ module.pageModule_text }}</a>
+            <ul>
+                {% for singleModule in module.singlemodule_set.all %}
+                <li><a href="../{{singleModule.singleModule_url_text}}">{{ singleModule.singleModule_text }}</a></li>
+                {% endfor %}
+            </ul>
+        </li>
+        {% endfor %}
+        </ul>
+    <div id="leftcontent">
+
+        <div class="container">
+        <h1 id="h1caption">School and Children’s Garden Links</h1>
+        </div>
+
+        <div id="main" class="container">
+            <div class="main_image">
+                <img src="{{first_image.images.large.url}}" alt="{{first_image.image_text}}" width="600px" height="456px"/>
+                <div class="desc">
+                    <div class="block">
+                    <a id="hyper_small" href="{{first_image.url_text}}" target="_blank;">{{first_image.image_text}}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="image_thumb">
+             <ul>
+            {% for eachImage in image_gallery_context %}
+            <li>
+                <a href="{{eachImage.images.large.url}}"><img src="{{eachImage.images.thumbnail.url}}" alt="{{eachImage.image_text}}" width="65px" height="50px"/></a>
+                <div class="block">
+                    <a class="hyperlink" href="{{eachImage.url_text}}">{{eachImage.image_text}}</a>
+                </div>
+            </li>
+            {% endfor %}
+             </ul>
+            </div>
+        </div>
+        <br>
+
+        <!-- new hyperlink add-->
+    <a class="new_a" href="./Childrens_Garden">1.Click For Children's Garden Links</a><br>
+    <a class="new_a" href="./Accessible_Gardens">2.Click For Accessible Garden Resources Links</a>
+    
+</div><!--leftcontent end-->
+{% else %}
+    <p>Loading Error.</p>
+{% endif %}
+    <div id="d2"><hr id="hr2"></div>
+    <div id="dimg"> <img src="{% static 'mainpage/images/map.jpg'%}" width="200px" height="150px"></div> 
+    <div id="dcontact"><h3>&nbsp;&nbsp;&nbsp;Contact Information</h3>
+        <ul id="ulcontact">
+            <li>&nbsp;&nbsp;&nbsp;Name: Dr. Arlene Marturano</li>
+            <li>&nbsp;&nbsp;&nbsp;Email: scgardenlearning@gmail.com </li>
+        </ul>
+    </div>
+
+    <div id="dfacebook"><h3>&nbsp;&nbsp;Find us on Facebook</h3>
+        <a href="https://www.facebook.com/pages/South-Carolina-Garden-Based-Learning-Network/190464384322916"><img id="dfaceimage" src="{% static 'mainpage/images/facebook.png'%}" id="imgfacebook"></a>
+    </div>
+
+
+</div><!--all end>

@@ -1,0 +1,72 @@
+{% load staticfiles %}
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'scgarden/styles.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'scgarden/mystyle.css' %}" />
+    <link rel="shortcut icon" href="{% static "mainpage/images/icon1.jpg" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'writing/writingstyle.css' %}" />
+    <script type="text/javascript" src="{% static 'scgarden/js/jquery-1.8.3.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'scgarden/js/imagescript.js' %}"></script>
+    <script type="text/javascript" src="{% static 'scgarden/js/jssor.js' %}"></script>
+    <script type="text/javascript" src="{% static 'scgarden/js/myscript.js' %}" ></script>
+    
+<div id="all">
+    <div id="dtop"></div>
+    <img id="header" src="{% static 'mainpage/images/header.jpg'%}">
+{% if pageModule_text_list %}
+    <ul id="jsddm">
+    {% for module in pageModule_text_list %}
+        
+        <li><a href="../{{ module.url_text}}">{{ module.pageModule_text }}</a>
+            <ul>
+                {% for singleModule in module.singlemodule_set.all %}
+                <li><a href="../{{singleModule.singleModule_url_text}}">{{ singleModule.singleModule_text }}</a></li>
+                {% endfor %}
+            </ul>
+        </li>
+    {% endfor %}
+    </ul>
+<div id="leftcontent">
+  <h1 id="h1caption">About My Writing</h1>
+  <center><img id="contentpicture" src="{% static 'writing/images/pen.jpg'%}"></center>
+    <div id="wrap">
+        {% for journal in journal_list%}
+        <div id="left_col">
+            {% if journal.type_text == 'The State' %}
+                <h1 class="lefth1">The State</h1>
+                {% for each_publish in journal.publish_set.all %}
+                <div class="journal">
+                    <h4 class="dateh4">{{each_publish.published_date|date:"D d M Y"}}</h4>
+                    <a class="content_a" href="{{each_publish.assocate_url}}" target="_blank">{{each_publish.title_text}}</a>
+                </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div id="right_col">
+            {% if journal.type_text == 'The Star' %}
+                <h1 class="lefth1">The Star</h1>
+                {% for eachRssObj in RssObj %}                  
+                        <div class="journal">
+                            <h4 class="dateh4">{{eachRssObj.timeValue}}</h4>
+                            <a class="content_a" href="{{eachRssObj.link}}" target="_blank">{{eachRssObj.title}}</a>
+                        </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+    <div id="dimg"> <img src="{% static 'mainpage/images/map.jpg'%}" width="200px" height="150px"></div> 
+    <div id="dcontact"><h3>&nbsp;&nbsp;Contact Information</h3>
+        <ul id="ulcontact">
+            <li>Name: Dr. Arlene Marturano</li>
+            <li>Email: scgardenlearning@gmail.com </li>
+        </ul>
+    </div>
+
+    <div id="dfacebook"><h3>&nbsp;&nbsp;Find us on Facebook</h3>
+        <a href="https://www.facebook.com/pages/South-Carolina-Garden-Based-Learning-Network/190464384322916"><img id="dfaceimage" src="{% static 'mainpage/images/facebook.png'%}" id="imgfacebook"></a>
+    </div>
+{% else %}
+    <p>Loading Error.</p>
+{% endif %}
+</div>

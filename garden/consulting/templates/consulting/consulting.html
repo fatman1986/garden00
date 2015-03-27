@@ -1,0 +1,121 @@
+{% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'scgarden/styles.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'scgarden/mystyle.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'consulting/consultingstyle.css' %}" />  
+    <link rel="shortcut icon" href="{% static "mainpage/images/icon1.jpg" %}" />
+    <script type="text/javascript" src="{% static 'scgarden/js/jquery-1.8.3.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'consulting/js/jquery.smartTab.js' %}"></script>
+    <script type="text/javascript" src="{% static 'consulting/js/consultingscript.js' %}"></script>
+    <script type="text/javascript" src="{% static 'scgarden/js/imagescript.js' %}"></script>
+    <script type="text/javascript" src="{% static 'scgarden/js/jssor.js' %}"></script>
+    <script type="text/javascript" src="{% static 'scgarden/js/myscript.js' %}" ></script>
+    
+<div id="all">
+  <div id="dtop"></div>
+  <img id="header" src="{% static 'mainpage/images/header.jpg'%}">
+{% if pageModule_text_list %}
+    <ul id="jsddm">
+    {% for module in pageModule_text_list %}
+        
+        <li><a href="../{{ module.url_text}}">{{ module.pageModule_text }}</a>
+        	<ul>
+        		{% for singleModule in module.singlemodule_set.all %}
+        		<li><a href="../{{singleModule.singleModule_url_text}}">{{ singleModule.singleModule_text }}</a></li>
+        		{% endfor %}
+        	</ul>
+        </li>
+    {% endfor %}
+    </ul>
+<div id="leftcontent">
+  <h1 id="h1caption">Consulting Options</h1>
+  <div id="w" class="clearfix">
+    <ul id="sidemenu">
+      <li>
+         <a href="#home-content" class="open"><strong>School/Homeschool Programs</strong></a>
+      </li>
+        <img src="{% static 'consulting/images/2.jpg'%}" width="200px" height="200px" >
+        </li>
+      <li>
+        <a href="#about-content"><strong>Teacher Workshops</strong></a>
+      </li>
+      <li>
+        <img src="{% static 'consulting/images/3.jpg'%}" width="200px" height="200px" >
+      </li>
+    </ul>
+    <div id="content">
+        <div id="home-content" class="contentblock">
+          <h1 class="h1content">School/Homeschool Programs</h1>
+          <ul class="consult1">
+          <li><span class="consultspan">Butterfly gardening</span></li>
+          <li><span class="consultspan">Gardens-to-go</span></li>
+          <li><span class="consultspan">Organic gardening</span></li>
+          <li><span class="consultspan">Bird gardening</span></li>
+          <li><span class="consultspan">Creating a bird garden</span></li>
+          <li><span class="consultspan">Hummingbird gardens</span></li>
+          <li><span class="consultspan">Bluebirds in SC</span></li>
+          <li><span class="consultspan">Nutrition theme gardens</span></li>
+          <li><span class="consultspan">MyPlate to MyGarden</span></li>
+          <li><span class="consultspan">Pizza gardens</span></li>
+          <li><span class="consultspan">Bucket gardens</span></li>
+          <li><span class="consultspan">Grow bucket greenhouses</span></li>
+          <li><span class="consultspan">Herb markets</span></li>
+          <li><span class="consultspan">Reading trees</span></li>
+          <li><span class="consultspan">Family gardening</span></li>
+          <li><span class="consultspan">Wildlife habitats</span></li>
+          <li><span class="consultspan">Carolina fence</span></li>
+          <li><span class="consultspan">Seed saving</span></li>
+          <li><span class="consultspan">Plant propagation</span></li>
+          <li><span class="consultspan">Square foot gardening</span></li>
+          <li><span class="consultspan">Celebrating flowers</span></li>
+          </ul>
+        </div><!-- @end #home-content -->
+        
+        <div id="about-content" class="contentblock hidden">
+          <h1 class="h1content">Teacher Workshops</h1>
+          <ul class="consult1">
+          <li><span class="consultspan">Classroom management techniques</span></li>
+          <li><span class="consultspan">The Learning Pyramid</span></li>
+          <li><span class="consultspan">Integrating language and science</span></li>
+          <li><span class="consultspan">Directive words and thinking</span></li>
+          <li><span class="consultspan">Thinking games</span></li>
+          <li><span class="consultspan">Grants</span></li>
+          <li><span class="consultspan">Professional</span></li>
+          <li><span class="consultspan">Curriculum</span></li>
+          <li><span class="consultspan">Institutional</span></li>
+          <li><span class="consultspan">Reading the environment</span></li>
+          <li><span class="consultspan">Primary vs. secondary reading</span></li>
+          <li><span class="consultspan">Outdoor Reading Games</span></li>
+          <li><span class="consultspan">B.I.R.D. Calendar of Activities</span></li>
+          <li><span class="consultspan">Gardens as Ecosystems</span></li>
+          <li><span class="consultspan">Green Time Out</span></li>
+          <li><span class="consultspan">Literacy Naturally for ELLs</span></li>
+          <li><span class="consultspan">Intergenerational gardening</span></li>
+          <li><span class="consultspan">Garden-based Learning</span></li>
+          <li><span class="consultspan">Carolina Children’s Garden</span></li>
+          <li><span class="consultspan">Youth Gardens across America</span></li>
+          <li><span class="consultspan">Citizen Science Programs</span></li>
+          <li><span class="consultspan">Starting and Sustaining School Gardens</span></li>
+          <li><span class="consultspan">Garden Variety Curriculum</span></li>
+          </ul>
+        </div><!-- @end about-content -->
+        <h1 style="color:#FF9966; font-size:20px;">* Tailored to your need! Send me an email!</h1>
+        
+    </div><!-- @end #content -->
+  </div><!-- @end w-->
+</div><!--end of leftcontent-->
+
+    <div id="dimg"> <img src="{% static 'mainpage/images/map.jpg'%}" width="200px" height="150px"></div> 
+    <div id="dcontact"><h3>&nbsp;&nbsp;Contact Information</h3>
+        <ul id="ulcontact">
+            <li>Name: Dr. Arlene Marturano</li>
+            <li>Email: scgardenlearning@gmail.com </li>
+        </ul>
+    </div>
+
+    <div id="dfacebook"><h3>&nbsp;&nbsp;Find us on Facebook</h3>
+        <a href="https://www.facebook.com/pages/South-Carolina-Garden-Based-Learning-Network/190464384322916"><img id="dfaceimage" src="{% static 'mainpage/images/facebook.png'%}" id="imgfacebook"></a>
+    </div>
+{% else %}
+    <p>Loading Error.</p>
+{% endif %}
+</div>

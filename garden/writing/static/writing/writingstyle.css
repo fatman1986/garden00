@@ -1,0 +1,123 @@
+body{ 
+  background: #DEE79C;
+  }
+#dtop{
+    width:875px;
+    height:10px;
+    display: inline;
+    float:left;
+    margin-left: 40px;
+    background-color: #FF9966;
+  }
+#all
+  { width: 950px;
+    min-width: 900px;
+    background: #AFCF92;
+    height: 2020px;
+    margin-left:auto;
+    margin-right: auto;   
+    padding-top: 20px;
+    margin-top: 8px;
+  }
+#header{
+    width:875px;
+    height:200px;
+    margin-left: 40px;
+  }
+#leftcontent{
+    display:inline;
+    float:left;
+    width: 875px;
+    height: 1600px;
+    margin-left: 40px;
+    background: #FFF5C3;
+    margin-bottom: 0px;
+    border-bottom: 7px solid white;
+  }
+#h1caption{
+    text-align: center;
+    font-family: Trebuchet MS, Verdana, Helvetica, Arial, sans-serif;
+    color:#99CC99;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+#contentpicture{
+	height: 300px;
+	width: 800px;
+	/*border:2px solid #DCF0F7;*/
+
+}
+#wrap {
+   width:791px;
+   height: 1150px;
+   margin-left: 37px;
+   padding-left: 10px;
+   background: #FEFCD7;
+   overflow-y: auto;
+}
+#left_col {
+   width:795px;
+   margin-left:-11px; 
+   overflow: auto;
+}
+.lefth1{
+	font-family: Trebuchet MS, Verdana, Helvetica, Arial, sans-serif;
+	color:#FF9966;
+	text-align: center;
+
+}
+.dateh4{
+	font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+	color:#009966;
+	margin-top: 10px;
+	margin-left: 10px;
+
+}
+.content_a{
+	color:#7ABA7A;
+	font-size: 25px;
+	margin-left: 10px;
+  text-decoration: none;
+
+}
+#right_col {
+   width:795px;
+   margin-left:-11px; 
+}
+a:hover{
+	color:#FF9966;
+
+}
+#dimg{
+        margin-top: 720px;
+        margin-left: 40px;
+    }
+    #dcontact{
+        background-color: #FF9966;
+        margin-top: -150px;
+        margin-left: 240px;
+        width:400px;
+        height:150px;
+        color:white;
+        border-right: 2px solid white;
+    }
+    #ulcontact{
+        margin-left: 25px;
+        margin-top: 10px;
+        list-style-type: disc;
+        color:white;
+    }
+    #dfacebook{
+        background-color: #FF9966;
+        margin-top: -150px;
+        margin-left: 642px;
+        color:white;
+        width:273px;
+        height:150px;
+    }
+    #dfaceimage{
+        margin-top: 10px;
+        margin-left: 10px;
+        height:30px;
+        width:30px;
+    }

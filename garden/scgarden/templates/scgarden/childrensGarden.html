@@ -1,0 +1,71 @@
+{% load staticfiles %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'scgarden/childrenGardenStyle.css' %}" />
+    <link rel="shortcut icon" href="{% static "mainpage/images/icon1.jpg" %}" />
+    <script type="text/javascript" src="{% static 'scgarden/js/jquery-1.8.3.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'scgarden/js/myscript.js' %}" ></script>
+
+<div id="all">
+        <div id="dtop"></div>
+        <img id="header" src="{% static 'scgarden/images/header.jpg'%}">
+        {% if pageModule_text_list %}
+        <ul id="jsddm">
+        {% for module in pageModule_text_list %}
+        <li><a href="http://{{ request.get_host }}/{{ module.url_text}}">{{ module.pageModule_text }}</a>
+        	<ul>
+        		{% for singleModule in module.singlemodule_set.all %}
+        		<li><a href="http://{{ request.get_host }}/{{singleModule.singleModule_url_text}}">{{ singleModule.singleModule_text }}</a></li>
+        		{% endfor %}
+        	</ul>
+        </li>
+        {% endfor %}
+        </ul>
+
+    <div id="leftcontent">
+        <h1 id="h1caption">Children’s Garden Links</h1>
+        <div id="gardencontent" >
+            <ol id="garden_ol">
+            <li><a href="http://www.bookwormgardens.org/about-us/our-story/">Bookworm Gardens in Sheboygan, WI </a></li>
+            <li><a href="http://www.carolinachildrensgarden.org">Carolina Children’s Garden in Columbia, SC </a></li>
+            <li><a href="http://www.ahs.org/river_farm/">Children’s Garden at River Farm in Alexandria,VA</a></li>
+            <li><a href="http://www.nybg.org/gardens/test_garden.php?id_gardens_collections=64">Everett Children’s Adventure Garden at New York Botanical Gardens in Bronx, NY</a></li>
+            <li><a href="http://www.mortonarb.org/childrens-garden.html">The Children’s Garden  at the Morton Arboretum in Lisle, IL</a></li>
+            <li><a href="http://www.4hgarden.msu.edu">The 4-H Children’s Garden at Michigan State University in East Lansing, MI</a></li>
+            <li><a href="http://meijergardens.org/gardens_experience/childrens_garden.php">The Lena Meijer Children’s Garden in Grand Rapids, MI</a></li>
+            <li><a href="http://www.norfolkbotanicalgarden.org/gardens-horticulture/wow-childrens-garden">The WOW Children’ s Garden at the Norfolk Botanical Garden in Norfolk, VA</a></li>
+            <li><a href="http://www.atlantabotanicalgarden.org/kids-schools/childrens-garden">The Children’s Garden at the Atlanta Botanical Garden in Atlanta, GA</a></li>
+            <li><a href="http://www.tucsonbotanical.org/plan/garden-map/children%E2%80%99s-discovery-garden/">The Children’s Discovery Garden at Tucson Botanical Garden in Tucson, AZ</a></li>
+            <li><a href="http://www.huntington.org/huntingtonlibrary.aspx?id=486">The Children’s Garden at Huntington Botanical Gardens in San Marino,CA</a></li>
+            <li><a href="http://www.bbg.org/discover/gardens/childrens_garden/">The Children’s Garden at Brooklyn Botanic Garden in Brooklyn, NY</a></li>
+            <li><a href="http://www.longwoodgardens.org/IndoorChildrensGarden_1_3_5_5.html">The Indoor Children’s Garden at Longwood Gardens in Kennett Square, PA</a></li>
+            <li><a href="http://www.longwoodgardens.org/">The Bee-aMazed Outdoor Children’s Garden at Longwood Gardens in Kennett Square, PA</a></li>
+            <li><a href="http://www.oregongarden.org/ChildrensGarden.htm">The Children’s Garden at The Oregon Garden in Silverton, OR</a></li>
+            <li><a href="http://www.lewisginter.org/children/index.php">The Children’s Garden at the Lewis Ginter Botanical Garden in Richmond, VA</a></li>
+            <li><a href="http://www.cbgarden.org/Visit/HersheyChildrensGarden.html">The Hershey Children’s Garden in the Cleveland Botanical Garden in Cleveland,OH</a></li>
+            <li><a href="http://www.villageofelwood.com/recreation/childrens-garden.htm">The Children’s Garden in the Village of Elwood in Elwood, IL</a></li>
+            <li><a href="http://www.camdenchildrensgarden.org">The Camden Children’s Garden in Camden, NJ</a></li>
+            <li><a href="http://www.greenvillesc.gov/ParksRec/ChildrensGarden.aspx">The Children’ s Garden at Linky Stone Park in Greenville, SC</a></li>
+            <li><a href="http://www.ca.uky.edu/arboretum/KCG.php"> Kentucky Children’s Garden at the State Botanical Garden of Kentucky in Lexington, KY</a></li>
+            <li><a href="http://www.mobot.org/finn/CHD_about10.asp">The Doris I. Schnuck Children’s Garden at the Missouri Botanical Garden in St. Louis, MO</a></li>
+            <li><a href="http://www.ithacachildrensgarden.org/">The Ithaca Children’s Garden in Cass Park in Ithaca, NY</a></li>
+            <li><a href="http://www.gbbg.org/formal_gardens/id/12/">Gertrude B. Nielsen Children’s Garden at Green Bay Botanical Garden in Green Bay, WI</a></li>
+            <li><a href="http://www.dowgardens.org/kids.html">Dow Gardens Children’s Garden in Midland, MI</a></li>
+        </ol>
+        </div>    
+    </div>    
+{% else %}
+    <p>Loading Error.</p>
+{% endif %}
+    <div id="dimg"> <img src="{% static 'mainpage/images/map.jpg'%}" width="200px" height="150px"></div> 
+    <div id="dcontact"><h3>&nbsp;&nbsp;&nbsp;Contact Information</h3>
+        <ul id="ulcontact">
+            <li>&nbsp;&nbsp;&nbsp;Name: Dr. Arlene Marturano</li>
+            <li>&nbsp;&nbsp;&nbsp;Email: scgardenlearning@gmail.com </li>
+        </ul>
+    </div>
+
+    <div id="dfacebook"><h3>&nbsp;&nbsp;Find us on Facebook</h3>
+        <a href="https://www.facebook.com/pages/South-Carolina-Garden-Based-Learning-Network/190464384322916"><img id="dfaceimage" src="{% static 'mainpage/images/facebook.png'%}" id="imgfacebook"></a>
+    </div>
+
+</div>

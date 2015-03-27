@@ -1,0 +1,143 @@
+/* common page styles */
+	body
+	{	background: #DEE79C;
+	}
+	#dtop{
+		width:875px;
+		height:10px;
+		display: inline;
+		float:left;
+		margin-left: 40px;
+		background-color: #FF9966;
+		margin-bottom: 0px;
+	}
+	#all
+	{	width: 950px;
+		min-width: 900px;
+		background: #AFCF92;
+		height: 1130px;
+		margin-left:auto;
+		margin-right: auto;		
+		padding-top: 20px;
+		margin-top: 8px;
+		margin-bottom: 8px;
+	}
+	#header{
+		width:875px;
+		height:200px;
+		margin-left: 40px;
+	}
+	#leftcontent{
+	    display:inline;
+		float:left;
+		width: 875px;
+		height: 700px;
+		margin-left: 40px;
+		background: #FFF5C3;
+		margin-bottom: 0px;
+		border-bottom: 7px solid white;
+		margin-right: -50px;
+	}
+	#h1caption{
+		text-align: center;
+		font-family: Trebuchet MS, Verdana, Helvetica, Arial, sans-serif;
+		color:#99CC99;
+		margin-top: 40px;
+		margin-bottom: 40px;
+	}
+
+ #hr2{
+    	border: 3px solid white;
+    	margin-top:728px;
+    	margin-left: 40px;
+    	margin-right: 35px;
+    	margin-bottom: 9px;
+    }
+    #d2{
+    	margin-bottom: 9px;
+    	margin-top: 534px;
+    
+    }
+    #dimg{
+    	margin-top: -9px;
+    	margin-left: 40px;
+    }
+    #dcontact{
+    	background-color: #FF9966;
+    	margin-top: -150px;
+    	margin-left: 230px;
+    	width:400px;
+    	height:150px;
+    	color:white;
+    	border-right: 2px solid white;
+    }
+    #ulcontact{
+    	margin-left: 30px;
+    	margin-top: 10px;
+    }
+    #dfacebook{
+    	background-color: #FF9966;
+    	margin-top: -150px;
+    	margin-left: 632px;
+    	color:white;
+    	width:283px;
+    	height:150px;
+    }
+    #dfaceimage{
+    	margin-top: 10px;
+    	margin-left: 10px;
+    	height:30px;
+    	width:30px;
+    }
+   
+	/* menu styles */
+	#jsddm
+	{	
+		margin-top: 0px;
+		margin-left: 40px;
+	}
+
+	#jsddm li
+	{	float: left;
+		list-style: none;
+		font: 14px Tahoma, Arial;
+	}
+
+	#jsddm li a
+	{	display: block;
+		background: #669933;
+		padding: 5px 12px;
+		text-decoration: none;
+		border-right: 1px solid white;
+		width: 100px;
+		color: #EAFFED;
+		white-space: nowrap;
+		text-align: center}
+
+	#jsddm li a:hover
+	{	background: #668844;}
+		
+	#jsddm li ul
+	{ 		margin: 0;
+			padding: 0;
+			position: absolute;
+			visibility: hidden;
+			border-top: 1px solid white
+	}
+		
+	#jsddm li ul li
+	{	float: none;
+		display: inline;
+	}
+			
+	#jsddm li ul li a
+	{	
+		width: auto;
+		background: #A9C251;
+		color: #EAFFED;
+		font: 14px Tahoma, Arial;
+	}
+	#jsddm li ul li a:hover
+	{	
+		background: #8EA344;
+	}

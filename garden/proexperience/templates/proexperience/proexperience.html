@@ -1,0 +1,64 @@
+{% load staticfiles %}
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'scgarden/styles.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'scgarden/mystyle.css' %}" />
+    <link rel="shortcut icon" href="{% static "mainpage/images/icon1.jpg" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'proexperience/proexpstyle.css' %}" />
+    <script type="text/javascript" src="{% static 'scgarden/js/jquery-1.8.3.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'scgarden/js/imagescript.js' %}"></script>
+    <script type="text/javascript" src="{% static 'scgarden/js/jssor.js' %}"></script>
+    <script type="text/javascript" src="{% static 'scgarden/js/myscript.js' %}" ></script>
+<div id="all">
+    <div id="dtop"></div>
+    <img id="header" src="{% static 'mainpage/images/header.jpg'%}">
+{% if pageModule_text_list %}
+    <ul id="jsddm">
+    {% for module in pageModule_text_list %}
+        
+        <li><a href="../{{ module.url_text}}">{{ module.pageModule_text }}</a>
+        	<ul>
+        		{% for singleModule in module.singlemodule_set.all %}
+        		<li><a href="../{{singleModule.singleModule_url_text}}">{{ singleModule.singleModule_text }}</a></li>
+        		{% endfor %}
+        	</ul>
+        </li>
+    {% endfor %}
+    </ul>
+<div id="leftcontent">
+    <h1 id="h1caption">Professional Experience</h1>
+    <div id="pro_content"> 
+    <img src="{% static 'proexperience/images/professor.jpg' %}" width="350px" height="400px" align="left">
+    
+    <p class="p1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Arlene Marturano is an educator, consultant, and writer. She has taught elementary and middle school students in university laboratory and public schools and has been a teacher educator at four universities.</p><br>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Her writing includes institutional research at universities, professional journal articles for inservice teachers and parents,garden writing for print and online magazines, curriculum for school districts and  grant-writing. She is the garden columnist for The Columbia Star and Kids Gardening columnist for The State newspaper in Columbia, South Carolina.As contributing writer for Suite 101.com she has posted a potpourri of interests.</p><br>
+    <p class="p1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Many of her children’s gardening articles have appeared in Science and Children, Science Scope, Soil Conservation, The Journal of Outdoor Education, SC Middle School Journal, The Reading Teacher, Reading Ideas, California Kindergarten Association Journal, Montessori Foundation’s Tomorrow’s Child, Living with Preschoolers, Living with Children, PlayDay, and The American Gardener.</p><br>  
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;She consults on youth gardening, outdoor, nature, and environmental education, the education roots of gardening with children,and reading, science and language arts curriculum projects.</p>
+    <br>
+    <p class="p1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Formal training in outdoor education came as part of her undergraduate  teacher education program at Northern Illinois University where education majors taught all school subjects outdoors year-round to sixth grade students bused in for a week 
+    in residence at the <a class="a1" href="http://niu.edu/taft/">Lorado Taft Field Campus</a> in Oregon, Illinois. Since then she has been bringing the outdoors into the classroom and taking children and teachers outside at every opportunity.</p><br>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As a former GrowLab workshop presenter for the National Gardening Association Arlene demonstrated how to light of the lives of children by growing food and flower gardens indoors and experimenting with root, shoots, and seeds. Having trained under Coe and Paul Williams of <a class="a1" href="http://www.fastplants.org/">Wisconsin Fast Plants</a> fame, she has introduced teachers to fast-cycling brassicas to improve the quality of science teaching and student learning. She was a classroom evaluator and curriculum consultant for the National 
+    Gardening Association’s online <a class="a1" href="http://www.kidsgardening.org/node/13015">Mountain Adventures</a>, a simulation expedition for grades 5-8 with a plants and people module.</p><br>
+    <p class="plast">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Being the 1993 recipient of the South Carolina <a class="a1" href="http://en.wikipedia.org/wiki/Christa_McAuliffe_Fellowship_Program">Christa McAuliffe Fellow</a> provided her a sabbatical to develop gardening with children across the state and to launch the SC Garden-based Learning Network. A subsequent grant from the Allen Foundation enabled the establishment of nutrition gardens in schools from the mountains to the sea.</p><br>
+    <p class="plast">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As a member of the American Horticultural Society she has presented programs at AHS youth gardening symposia throughout 
+    the US. In South Carolina she is education coordinator of the <a class="a1" href="http://www.carolinachildrensgarden.org/">Carolina Children’s Garden</a>, a two-acre demonstration theme garden she helped to originate at the Clemson University Sandhill Education Center in Columbia.</p><br>
+    <p class="plast">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Her very first children’s garden was one she planted around a cedar playhouse her father built for her and her sister.She sowed bachelor button, zinnia, and marigold seeds around the perimeter and made bouquets which she sold door to door.Today she peddles plants with words as a member of the <a class="a1" href="http://www.gardenwriters.org/gwa.php?p=index.html">Garden Writers Association</a>.</p><br>
+    <p class="plast">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Her home garden, a NWF backyard wildlife habitat, provides a laboratory for teaching and learning. Plants and animals 
+    are object lessons within the ecosystem of the garden.</p> 
+</div>  
+</div>
+
+    <div id="dimg"> <img src="{% static 'mainpage/images/map.jpg'%}" width="200px" height="150px"></div> 
+    <div id="dcontact"><h3>&nbsp;&nbsp;Contact Information</h3>
+        <ul id="ulcontact">
+            <li>Name: Dr. Arlene Marturano</li>
+            <li>Email: scgardenlearning@gmail.com </li>
+        </ul>
+    </div>
+
+    <div id="dfacebook"><h3>&nbsp;&nbsp;Find us on Facebook</h3>
+        <a href="https://www.facebook.com/pages/South-Carolina-Garden-Based-Learning-Network/190464384322916"><img id="dfaceimage" src="{% static 'mainpage/images/facebook.png'%}" id="imgfacebook"></a>
+    </div>
+{% else %}
+    <p>Loading Error.</p>
+{% endif %}
+</div>

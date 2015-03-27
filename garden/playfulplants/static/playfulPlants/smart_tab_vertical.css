@@ -1,0 +1,113 @@
+/*   
+  SmartTab plugin v0.99
+  jQuery Tab Control Plugin
+  
+  http://tech-laboratory.blogspot.com
+  http://techlaboratory.wordpress.com
+*/
+
+.specialOne {
+    padding:1px;
+    margin-left: 20px;
+    border:1px solid #7BB31A;
+    background-color:yellow;
+  }
+ .specialOne:hover{ 
+    border: solid 1px #CCC; 
+    -moz-box-shadow: 1px 1px 5px #999; 
+    -webkit-box-shadow: 1px 1px 5px #999;
+    box-shadow: 4px 4px 10px green; 
+  }
+  #eachImage{
+    width:180px;
+    height:180px;  
+    margin-top: 15px; 
+  }
+  #eachImage h3{
+    text-align: center;
+  }
+  #title{
+  font: 1.5em normal Georgia, "Times New Roman", Times, serif;
+  color: #fff;
+  text-align: center;
+  font-style: italic;
+  margin: 40px 0 10px;
+  }
+.stContainer {
+    padding-top: 50px;
+    position:relative;
+    margin:0;
+    padding:0;          
+    font-family: Trebuchet MS, Verdana, Helvetica, Arial, sans-serif;
+  
+    width:875px;
+}
+.stContainer div {    
+    margin:             0;   
+    padding:            10px;   
+    border-left-width: 0 !important;
+    /*height: 300px;     */
+    width:643px;
+    height:650px;
+    font: normal 12px Verdana, Arial, Helvetica, sans-serif; 
+    color:              #FF9966;   
+    background-color:   #FEFCD7;
+    text-align:left;
+    overflow:auto;   
+    float: left; 
+    
+}
+.stContainer ul {
+    display:block;    
+    float: left;
+    position: relative;    
+    padding:0px ;
+    padding-top: 0px;   
+    padding-right: 0px; 
+    padding-left: 0px;     
+    margin: 0;     
+    width:205px;
+    height:670px; 
+    clear: both;
+    border-right: 5px solid #FEEA65;  
+    background: #DCF0F7;
+}
+.stContainer ul li{ 
+    position: relative; 
+    margin: 0;
+    padding: 0;    
+   /* border-bottom: 0px solid #E0E0E0 !important; */ 
+    border-top: 1px solid white;  
+    border-bottom: 1px solid white;      
+    float: left;
+}
+.stContainer ul li a { 
+  display:block;
+  margin:0;
+  padding:3px;
+  text-decoration: none;
+  height:50px;
+  width:200px;
+  outline-style:none;
+}
+.stContainer ul li a h2 { 
+  display:block;
+  font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #669900;
+  float:left;
+  font-size: 20px;
+}
+.stContainer ul li a:hover {   
+  background:#ACD1E9; 
+}
+.stContainer ul li a.sel { 
+  height:80px;
+  color:#EA8511;  
+  background: white;  
+  cursor:text;   
+}
+.stContainer ul li a.dis {
+  color:#CCCCCC;  
+  background: #F8F8F8;  
+  cursor:text;   
+}

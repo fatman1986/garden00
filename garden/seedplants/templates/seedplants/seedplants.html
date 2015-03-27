@@ -1,0 +1,136 @@
+{% load staticfiles %}
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'scgarden/styles.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'scgarden/mystyle.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'seedplants/seedplantstyle.css' %}" />
+    <link rel="shortcut icon" href="{% static "mainpage/images/icon1.jpg" %}" />
+    <script type="text/javascript" src="{% static 'scgarden/js/jquery-1.8.3.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'scgarden/js/imagescript.js' %}"></script>
+    <script type="text/javascript" src="{% static 'scgarden/js/jssor.js' %}"></script>
+    <script type="text/javascript" src="{% static 'scgarden/js/myscript.js' %}" ></script>
+<div id="all">
+    <div id="dtop"></div>
+    <img id="header" src="{% static 'mainpage/images/header.jpg'%}">
+{% if pageModule_text_list %}
+    <ul id="jsddm">
+    {% for module in pageModule_text_list %}
+        
+        <li><a href="../{{ module.url_text}}">{{ module.pageModule_text }}</a>
+        	<ul>
+        		{% for singleModule in module.singlemodule_set.all %}
+        		<li><a href="../{{singleModule.singleModule_url_text}}">{{ singleModule.singleModule_text }}</a></li>
+        		{% endfor %}
+        	</ul>
+        </li>
+    {% endfor %}
+    </ul>
+<div id="leftcontent">
+    <h1 id="h1caption">Seed And Plant Resources</h1>
+    <div id="pictures">
+    <img class="image" src="{% static 'seedplants/images/seed1.jpeg' %}" >
+    <img class="image" src="{% static 'seedplants/images/seed2.jpeg' %}" >
+    <img class="image" src="{% static 'seedplants/images/seed3.jpg' %}" >
+    <img class="image" src="{% static 'seedplants/images/seed4.jpg' %}" >
+    </div><!--end pictures-->
+<br>
+<br>
+
+
+<div id="content">
+    <table align="center">
+    <tr>
+    <td><a href="http://www.territorialseed.com/Abundant_Life_Seeds" target="_blank">Abundant Life Seed Foundation</a></td>
+    <td><a href="http://www.amishlandseeds.com/" target="_blank">Amishland Heirloom Seeds</a></td>
+    <td><a href="http://www.antiqueplants.com/" target="_blank">Antique Plants</a></td>
+    <td><a href="http://www.rareseeds.com/" target="_blank">Baker Creek Heirloom Seeds</a></td>
+    </tr>
+    <tr>
+    <td><a href="http://www.bluestoneperennials.com/" target="_blank">Bluestone Perennials</a></td>
+    <td><a href="http://bonnieplants.com/" target="_blank">Bonnie Plants</a></td>
+    <td><a href="https://store.brentandbeckysbulbs.com/" target="_blank">Brent and Becky’s Bulbs</a></td>
+    <td><a href="http://www.burpee.com/" target="_blank">Burpee</a></td>
+    </tr>
+    <tr>
+    <td><a href="http://ediblelandscaping.com/" target="_blank">Edible Landscaping Online</td> 
+    <td><a href="http://www.forestfarm.com/" target="_blank">Forestfarm</a></td>
+    <td><a href="http://www.glecklerseedmen.com/" target="_blank">Gleckler Seedman</a></td> 
+    <td><a href="http://www.goodnessgrows.com/" target="_blank">Goodness Grows</a></td> 
+    </tr>
+    <tr>
+    <td><a href="http://www.highcountrygardens.com/" target="_blank">High Country Gardens</a></td> 
+    <td><a href="http://www.jlhudsonseeds.net/" target="_blank">J.L. Hudson, Seedsman</a></td> 
+    <td><a href="http://www.johnnyseeds.com/" target="_blank">Johnny’s Selected Seeds</a></td> 
+    <td><a href="http://www.songsparrow.com/" target="_blank">Klemn’s Song Sparrow Farm</a></td>
+    </tr> 
+    <tr>
+    <td><a href="http://www.landrethseeds.com/" target="_blank">D. Landreth Seed Company</a></td> 
+    <td><a href="http://www.artisticgardens.com/index.aspx" target="_blank">Le Jardin du Gourmet</a></td>
+    <td><a href="http://www.logees.com/" target="_blank">Logee’s Tropical Plants</a></td> 
+    <td><a href="http://jenksfarmer.com/" target="_blank">Lushlife Nurseries</a></td> 
+    </tr>
+    <tr>
+    <td><a href="http://www.monticelloshop.org/" target="_blank">Monticello Catalog</a></td> 
+    <td><a href="http://www.mountainvalleygrowers.com/" target="_blank">Mountain Valley Growers</a></td>
+    <td><a href="http://www.nichegardens.com/" target="_blank">Niche Gardens</a></td>
+    <td><a href="https://www.nicholsgardennursery.com/store/index.php" target="_blank">Nichols Garden Nursery</a></td>
+    </tr>
+    <tr>
+    <td><a href="http://www.nurcar.com/" target="_blank">Nurseries Caroliniana</a></td>
+    <td><a href="http://www.oldhousegardens.com/" target="_blank">Old House Gardens</a></td>
+    <td><a href="http://www.petalsfromthepast.com/" target="_blank">Petals From the Past</a></td>
+    <td><a href="http://www.superseeds.com" target="_blank">Pinetree Garden Seeds</a></td>
+    </tr>
+    <tr>
+    <td><a href="http://www.plantdelights.com" target="_blank">Plant Delights Nursery</a></td>
+    <td><a href="http://www.rareseeds.com" target="_blank">Baker Creek Heirloom Seeds</a></td>
+    <td><a href="http://www.reneesgarden.com" target="_blank">Renee’s Garden</a></td>
+    <td><a href="http://www.rhshumway.com" target="_blank">R.H. Shumway Seedsman</a></td>
+    </tr>
+    <tr>
+    <td><a href="http://www.richters.com" target="_blank">Richters Herb Specialists</a></td>
+    <td><a href="http://www.seedsofchange.com" target="_blank">Seeds of Change</a></td>
+    <td><a href="http://www.seedsavers.org" target="_blank">Seed Savers Exchange</a></td>
+    <td><a href="http://www.selectseeds.com" target="_blank">Select Seeds</a></td>
+    </tr>
+    <tr>
+    <td><a href="http://www.singingoakesdaylilies.com" target="_blank">Singing Oaks Garden</a></td>
+    <td><a href="http://www.southernexposure.com" target="_blank">Southern Exposure Seed Exchange</a></td>
+    <td><a href="http://www.specialtyornamentals.com" target="_blank">Specialty Ornamentals</a></td>
+    <td><a href="http://www.starkbros.com" target="_blank">Stark Brothers</a></td>
+    </tr>
+    <tr>
+    <td><a href="http://www.stokeseeds.com/" target="_blank">Stokes Seeds</a></td>
+    <td><a href="http://www.terranovanurseries.com/gardeners/index.php" target="_blank">Terra Nova Nurseries</a></td>
+    <td><a href="http://www.territorialseed.com" target="_blank">Territorial Seed Company</a></td>
+    <td><a href="http://www.underwoodgardens.com/" target="_blank">Terroir Seeds</a></td>
+    </tr>
+    <tr>
+    <td><a href="http://www.fragrantpathseeds.com" target="_blank">The Fragrant Path</a></td>
+    <td><a href="http://www.thompson-morgan.com" target="_blank">Thompson & Morgan</a></td>
+    <td><a href="http://www.thymeafterthyme.com" target="_blank">Thyme After Thyme</a></td>
+    <td><a href="http://www.victoryseeds.com" target="_blank">Victory Seeds</a></td>
+    </tr>
+    <tr>
+    <td><a href="http://www.waysidegardens.com" target="_blank">Wayside Gardens</a></td>
+    <td><a href="http://www.whiteflowerfarm.com/" target="_blank">White Flower Farm</a></td>
+    <td><a href="http://www.woodlanders.net/" target="_blank">Woodlanders</a></td>
+    <td><a href="http://www.yuccado.com" target="_blank">YuccaDo</a></td>
+    </tr>
+    </table>
+</div>
+</div><!--end of leftcontent-->
+    <div id="dimg"> <img src="{% static 'mainpage/images/map.jpg'%}" width="200px" height="150px"></div> 
+    <div id="dcontact"><h3>&nbsp;&nbsp;Contact Information</h3>
+        <ul id="ulcontact">
+            <li>Name: Dr. Arlene Marturano</li>
+            <li>Email: scgardenlearning@gmail.com </li>
+        </ul>
+    </div>
+
+    <div id="dfacebook"><h3>&nbsp;&nbsp;Find us on Facebook</h3>
+        <a href="https://www.facebook.com/pages/South-Carolina-Garden-Based-Learning-Network/190464384322916"><img id="dfaceimage" src="{% static 'mainpage/images/facebook.png'%}" id="imgfacebook"></a>
+    </div>
+{% else %}
+    <p>Loading Error.</p>
+{% endif %}
+</div>
